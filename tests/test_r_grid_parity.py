@@ -1,7 +1,7 @@
 """Check the R grid scale and R findInterval mapping separately from bandwidth."""
 from pathlib import Path
 import numpy as np
-from pynebulosa._kde import wkde2d,_get_dens,calculate_density
+from ov_nebulosa._kde import wkde2d,_get_dens,calculate_density
 
 def test_fixed_r_bandwidth_reference():
     root=Path(__file__).parent/'fixtures'/'r_grid'

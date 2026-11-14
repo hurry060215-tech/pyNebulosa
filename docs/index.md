@@ -13,7 +13,7 @@ weighted kernel density estimation.
 
 ```python
 import scanpy as sc
-import pynebulosa as nb
+import ov_nebulosa as nb
 
 adata = sc.datasets.pbmc3k_processed()
 

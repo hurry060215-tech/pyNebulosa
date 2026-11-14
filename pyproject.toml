@@ -3,12 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pynebulosa"
-version = "0.1.1"
+name = "py-nebulosa-omicverse"
+version = "0.1.0"
 description = "Single-cell data visualization using kernel gene-weighted density estimation"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
+license-files = ["LICENSE", "ATTRIBUTION.md"]
 authors = [
     {name = "Mikhael Manurung"},
 ]
@@ -44,9 +45,12 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://pynebulosa.readthedocs.io"
-Source = "https://github.com/mdmanurung/pyNebulosa"
-Home-page = "https://github.com/mdmanurung/pyNebulosa"
+Upstream = "https://github.com/mdmanurung/pyNebulosa"
+Source = "https://github.com/hurry060215-tech/pyNebulosa"
+Home-page = "https://github.com/hurry060215-tech/pyNebulosa"
+
+[[project.maintainers]]
+name = "Haoliang Zhu"
 
 [project.optional-dependencies]
 scanpy = ["scanpy>=1.9"]
@@ -62,13 +66,13 @@ test = [
     "pytest-cov",
 ]
 dev = [
-    "pynebulosa[test,doc,scanpy]",
+    "py-nebulosa-omicverse[test,doc,scanpy]",
     "pre-commit",
     "ruff",
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["pynebulosa"]
+packages = ["ov_nebulosa"]
 
 # --- Testing -----------------------------------------------------------
 
@@ -85,7 +89,7 @@ filterwarnings = [
 ]
 
 [tool.coverage.run]
-source = ["pynebulosa"]
+source = ["ov_nebulosa"]
 omit = ["tests/*"]
 
 [tool.coverage.report]
@@ -112,7 +116,10 @@ select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["pynebulosa"]
+known-first-party = ["ov_nebulosa"]
 
 [tool.ruff.format]
 docstring-code-format = true
+
+[tool.hatch.build.targets.sdist]
+include = ["/ov_nebulosa", "/tests", "/scripts", "/README.md", "/UPSTREAM_README.md", "/RELEASE.md", "/ATTRIBUTION.md", "/LICENSE", "/pyproject.toml"]

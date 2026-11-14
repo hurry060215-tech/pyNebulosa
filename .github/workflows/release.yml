@@ -1,19 +1,8 @@
-name: Release
-
+name: Historical release workflow
 on:
-  push:
-    tags:
-      - "v*"
-
-permissions:
-  contents: write
-
+  workflow_dispatch:
 jobs:
-  release:
+  notice:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          generate_release_notes: true
+      - run: echo "Use the explicit Publish to PyPI workflow after validation."
