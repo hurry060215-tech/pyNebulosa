@@ -1,24 +1,29 @@
 # Installation
 
-## From PyPI
+## Candidate installation
+
+This independent variant is not published yet. From the release checkout:
 
 ```bash
-pip install pynebulosa
+python -m pip install .
 ```
 
 ## With scanpy (recommended)
 
 ```bash
-pip install "pynebulosa[scanpy]"
+python -m pip install ".[scanpy]"
 ```
 
 ## Development install
 
 ```bash
-git clone https://github.com/mdmanurung/pyNebulosa.git
+git clone --branch release/omicverse-nebulosa https://github.com/hurry060215-tech/pyNebulosa.git
 cd pyNebulosa
 pip install -e ".[dev]"
 ```
+
+The intended PyPI distribution is `py-nebulosa-omicverse`, imported as
+`ov_nebulosa`. It does not overwrite the original `pynebulosa` module.
 
 ## Requirements
 
